@@ -1,16 +1,14 @@
 /**
  * Created by etern on 7/3/2017.
  */
-public class People {
+public class Person {
 
     private String name;
     private int age;
-    private char gender;
 
-    public People(String name, int age, char gender) {
+    public Person(String name, int age) {
         this.name = name;
         this.age = age;
-        this.gender = gender;
     }
 
     public String getName() {
@@ -29,20 +27,11 @@ public class People {
         this.age = age;
     }
 
-    public char getGender() {
-        return gender;
-    }
-
-    public void setGender(char gender) {
-        this.gender = gender;
-    }
-
     @Override
     public String toString() {
-        return "People{" +
+        return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", gender=" + gender +
                 '}';
     }
 }
