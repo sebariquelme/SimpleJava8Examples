@@ -1,8 +1,6 @@
 import java.util.Comparator;
 import java.util.LinkedList;
 
-import static java.util.Comparator.comparing;
-
 /**
  * Created by EternalEtulf on 7/3/2017.
  */
@@ -41,7 +39,7 @@ public class Main {
     }
 
     private static void SortingPeopleForAgeWithJava8(LinkedList<People> people){
-        people.sort(comparing(People::getAge));
+        people.sort(Comparator.comparing(People::getAge));
 
     }
 
