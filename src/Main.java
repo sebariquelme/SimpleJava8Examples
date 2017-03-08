@@ -16,6 +16,8 @@ public class Main {
         printingPeopleWithJava8(peopleList);
         filterPeopleOver21YearsLikeOldDays(peopleList);
         filterPeopleOver21YearsWithJava8(peopleList);
+        sumPeopleAgeLikeOldDays(peopleList);
+        sumPeopleAgeWithJava8(peopleList);
     }
 
     private static void filterPeopleOver21YearsWithJava8(List<Person> people) {
@@ -23,6 +25,7 @@ public class Main {
                 .filter(p -> p.getAge() > 21)
                 .forEach(System.out::println);
     }
+
 
     private static void filterPeopleOver21YearsLikeOldDays(List<Person> people) {
         List<Person> filtered = new LinkedList<>();
@@ -36,14 +39,24 @@ public class Main {
         }
     }
 
-    private static void sumPeopleAge(List<Person> people) {
+    private static void sumPeopleAgeWithJava8(List<Person> people) {
         System.out.println(people.stream()
                 .mapToInt(Person::getAge)
                 .sum());
     }
 
+    private static void sumPeopleAgeLikeOldDays(List<Person> people){
+        int sum = 0;
+        for(Person p: people){
+            sum += p.getAge();
+        }
+        System.out.println(sum);
+    }
+
+
+
     private static void printingPeopleWithJava8(List<Person> people) {
-        people.forEach(person -> System.out.println(person.getName()));
+        people.forEach(System.out::println);
     }
 
     private static void printingPeopleWithLikeOldDays(List<Person> people) {
